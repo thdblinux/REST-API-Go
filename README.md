@@ -11,6 +11,25 @@ Este projeto foi desenvolvido com o objetivo de criar uma API utilizando Golang,
 - `PostgreSQL:` Banco de dados relacional utilizado para armazenar e gerenciar os dados da aplicação.
 - `DBeaver`Ferramenta gráfica utilizada para administração e consulta do banco de dados PostgreSQL, facilitando a visualização e manipulação dos dados de forma intuitiva.
 - `Postman:` Ferramenta utilizada para testar as rotas da API e garantir que os endpoints estão funcionando corretamente, simplificando a validação dos fluxos da aplicação.
+
+## Bibliotecas Utilizadas no Projeto
+
+### Bibliotecas da Biblioteca Padrão do Go
+
+- **database/sql********: **Gerencia conexões e interações com bancos de dados SQL, fornecendo uma interface genérica para executar consultas e comandos SQL.
+
+- **fmt********: **Oferece funções para formatação e saída de texto, usado para logs e mensagens no terminal.
+
+### Bibliotecas Internas do Projeto (go-api)
+
+- **go-api/model********:** Define as estruturas de dados (structs) que representam os modelos da aplicação. Essas estruturas são usadas para mapeamento de dados e transporte entre camadas.
+
+- **go-api/repository********: **Implementa a lógica de acesso ao banco de dados, encapsulando consultas SQL e interações diretas com o PostgreSQL.
+
+### Biblioteca Externa
+
+- **github.com/lib/pq********: **Driver PostgreSQL para Go, usado para estabelecer conexões e executar comandos SQL no banco de dados PostgreSQL através da interface genérica database/sql.
+
 ## Diagrama de Comunicação
 **Abaixo está o diagrama que explica a comunicação entre a API (em Go) e o banco de dados PostgreSQL:**
 
@@ -45,8 +64,11 @@ Etapas do Projeto
 - `/usecases:` Contém a lógica de negócio.
 - `/repositories:`Gerencia a interação com o banco de dados.
 - `/models:` Define as entidades do domínio.
-Desenvolvimento
-
+## Desenvolvimento
+- **Testes de integração:** Garantem a comunicação correta entre a API e o banco de dados PostgreSQL.
+- Implementação dos casos de uso (Use Cases).
+- Desenvolvimento das queries no Repository.
+- Definição das entidades no Model.
 **Criação das rotas no Controller.**
 - Implementação dos casos de uso `(Use Cases)`.
 - Desenvolvimento das queries no `Repository`.
@@ -55,10 +77,13 @@ Desenvolvimento
 ## Testes
 
 **Testes unitários para cada camada.**
-- Testes de integração para verificar a comunicação com o banco de dados PostgreSQL.
+- *Testes de integração:* Para verificar a comunicação com o banco de dados PostgreSQL.
+- **Testes unitários:** Verificam a lógica de cada camada separadamente.
+- **Testes de integração:** Garantem a comunicação correta entre a API e o banco de dados PostgreSQL.
   
 ## Deploy
 **Utilização de Docker para gerar imagens da aplicação.**
+- Utilização de Docker para gerar imagens da aplicação.
 - Deploy em ambiente de produção, utilizando ferramentas como `Kubernetes` (opcional) para orquestração de containers.
 
 ## Conclusão
